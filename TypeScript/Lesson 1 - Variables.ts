@@ -6,14 +6,12 @@ Basics
 * These variables will be restricted to the same type while coding
 */
 
-// greeting variable is implicitly assigned to type 'string' because of the value it contains
+//The greeting variable is implicitly assigned to type 'string' because of the "hello" value
 let greeting = "hello";
 greeting = "hi";
 
-/*
-This would throw an error because greeting is assigned to type 'string' not 'number' 
-greeting = 18;
-*/
+// This would throw an error because greeting is assigned to type 'string' not 'number'
+// greeting = 18; 
 
 // age variable is explicitly assigned to type 'number' 
 let age: number;
