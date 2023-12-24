@@ -13,6 +13,18 @@ JavaScript is the foundational programming language when it comes to web develop
     * On the client-side JavaScript is commonly used to dynamically modify HTML and CSS via the DOM API.
     * On the server-side JavaScript may be used to pull data from a database. 
 
+### Interpreting JavaScript
+To run a JavaScript file in the terminal [Node.js](https://nodejs.org/en) must be installed, then use the following command:
+```
+node filename.js
+```
+
+However, to avoid having to rerun the command above after modifying the code a watch flag can be used. 
+This is only supported in Node version 18.11 or higher. 
+```
+node --watch directory/fileName.js
+```
+
 ## TypeScript
 ### What is TypeScript?
 TypeScript is a variant of JavaScript released by Microsoft in 2012.
@@ -38,6 +50,23 @@ To run that new file enter the following into the terminal:
 ```
 node filename.js
 ```
+
+To make this workflow more consice developers can generate a tsconfig file and utilize a watch flag. 
+
+A tsconfig file is a json file with various options that can be modified to make working with TypeScript easier.  
+To create a new tsconfig file open the terminal, make sure to change into the file directory, and then run:
+```
+tsc --init
+```
+* `rootDir` - Declare a path to a root folder that will contain all the pre-compiled TypeScript files, in the practice files this is the `src` folder within the TypeScript folder
+* `outDir` - Declares a path to the output folder that will contain all the compiled JavaScript files, in the practice files this is the `dist` folder within the TypeScript folder
+
+Once this has been modified in the tsconfig file simply run `tsc` in the terminal. 
+To declare a watch flag so the `tsc` command won't need to be ran after every change to the code run the following:
+```
+tsc --watch
+```
+To review the command that allows the JavaScript to run with a watch flag check [Interpreting JavaScript](#interpreting-javascript).
 
 ## Resources
 **TypeScript**
