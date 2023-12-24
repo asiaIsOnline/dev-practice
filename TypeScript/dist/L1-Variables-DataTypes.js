@@ -58,16 +58,35 @@ let randomStuff = [23, 'Jasmine', true];
 // The randomStuff array has multiple data types within making it a union type
 let thing = randomStuff[1];
 // The thing variable's value can be any one of the data types used within the randomStuff array
-/*
-----------------------------------------
-OBJECT LITERALS
-*/
-// The user object implicitly defines the types for the username, age, and isAdmin properties
+// ----------------------------------------
+// TUPLES
+// Tuples are essentially an array of values of different types in a specific order
+let person = ['mario', 30, true];
+// The person variable is a tuple type that must contain a string, number, and boolean value in that order
+let hsla;
+hsla = [200, '100%', '50%', 1];
+let xy;
+xy = [94.7, 20.1];
+function useCoords() {
+    // get coordinates
+    const lat = 100;
+    const long = 50;
+    return [lat, long];
+}
+// The useCoords function returns a tuple that must contain two numbers
+const [lat, long] = useCoords();
+let employee;
+// The employee variable contains a named tuple type which will help provide more feedback
+employee = ['Andrew', 34];
+console.log(employee[0]);
+// ----------------------------------------
+// OBJECT LITERALS
 let user = {
     username: "johnsmith02",
     age: 30,
     isAdmin: false,
 };
+// The user object implicitly defines the types for the username, age, and isAdmin properties
 user.username = "johnsmith30";
 // user.isAdmin = "no";
 // This would throw an error because user.isAdmin is implicitly assigned to the type 'boolean'  
