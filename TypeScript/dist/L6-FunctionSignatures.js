@@ -32,6 +32,7 @@ calcs.push(multiplyTwoNumbers);
 calcs.push(squareNumber);
 // The HasArea has a calcArea property assigned to a function signature 
 // Any objects that adhere to the HasArea interface must include a name and a calcArea function that returns a number
+// The calcArea function signature could also be written as calcArea(a: number): number
 const shapeOne = {
     name: 'square',
     calcArea(length) {
@@ -47,4 +48,4 @@ const shapeTwo = {
 console.log(shapeOne.calcArea(5));
 // Returns 25
 console.log(shapeTwo.calcArea(8));
-// Returns 
+// Returns 27
