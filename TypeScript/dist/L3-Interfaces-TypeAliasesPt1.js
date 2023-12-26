@@ -1,11 +1,12 @@
 "use strict";
 /*
-INTERFACES & TYPE ALIASES
+INTERFACES & TYPE ALIASES PT1
 ----------------------------------------
 SUMMARY
 * Interfaces are a way to define a certain structure that other data structures can adhere to.
 * To create an interface use the interface keyword and capitalize the first letter of the interface (pascal case).
 * Interfaces can be assigned as a type to a variable like a string, number, boolean, etc.
+* Define a new type alias using the type keyword, the name of the alias, and the assignment operator
 */
 const authorOne = {
     name: 'Rachel Smythe',
@@ -35,4 +36,28 @@ function createPost(post) {
 createPost(newPost);
 // Returns Created post My New Post by Rachel Smythe.
 let posts = [];
-// The posts variable is an array type that can only contain values adhering to the Post interface type
+// The type alias RGB is assigned to a tuple that requires three number values
+function getRandomColor() {
+    const r = Math.floor(Math.random() * 255);
+    const g = Math.floor(Math.random() * 255);
+    const b = Math.floor(Math.random() * 255);
+    return [r, g, b];
+}
+// The getRandomColor function must return the RGB type which must be a tuple containing three number values
+const colorOne = getRandomColor();
+const colorTwo = getRandomColor();
+console.log(colorOne, colorTwo);
+// The type alias defines the User object literal that requires a name that's a string type and a score of a number type
+const userOne = {
+    name: 'Ben',
+    score: 30
+};
+// The userOne variable is set to align to the User type meaning it requires the two defined properties and can have no others
+function formatUser(user) {
+    console.log(`Welcome back ${user.name}! Your current score is ${user.score}`);
+}
+// The formatUser function accepts a user parameter that must align to the User type alias 
+formatUser(userOne);
+// Returns Welcome back Ben! Your current score is 30
+formatUser({ name: 'Nick', score: 45 });
+// Returns Welcome back Nick! Your current score is 45
